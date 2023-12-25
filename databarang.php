@@ -56,9 +56,9 @@ include "koneksi.php";
                     <?php
                     if (strlen($a['foto']) > 0) {
                     ?>
-                      <img src="./img/<?= $a['foto']; ?>" width="70px" class="img-thumbnail" alt="...">
+                      <img src="./img/foto_brg/<?php echo $a['foto']; ?>" width="70px" class="img-thumbnail" alt="...">
                     <?php } else { ?>
-                      <img src="./img/hp default.png" width="70px" class="img-thumbnail" alt="...">
+                      <img src="./img/foto_brg/default.png" width="70px" class="img-thumbnail" alt="...">
                     <?php } ?>
                   </td>
                   <td><?= $a['kdbarang']; ?></td>
