@@ -63,24 +63,77 @@ if (isset($_SESSION['email']) && isset($_SESSION['level'])) {
                   <span>Dashboard</span>
                 </a>
               </li>
-              <li class="sidebar-item  ">
-                <a href="?page=databarang" class='sidebar-link'>
-                  <i class="bi bi-grid-fill"></i>
-                  <span>Data Produk</span>
-                </a>
-              </li>
-              <li class="sidebar-item  ">
-                <a href="?page=datapenjual" class='sidebar-link'>
-                  <i class="bi bi-grid-fill"></i>
-                  <span>Data Penjual</span>
-                </a>
-              </li>
-              <li class="sidebar-item  ">
-                <a href="?page=datapembeli" class='sidebar-link'>
-                  <i class="bi bi-grid-fill"></i>
-                  <span>Data Pembeli</span>
-                </a>
-              </li>
+              <li class="sidebar-title">Data Master</li>
+              <!-- menu admin -->
+              <?php
+              if ($_SESSION['level'] == "admin") {
+              ?>
+                <li class="sidebar-item">
+                  <a href="?page=databarang" class='sidebar-link'>
+                    <i class="fa-brands fa-product-hunt"></i>
+                    <span>Data Produk</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="?page=datapembeli" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Data Pembeli</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="?page=datapenjual" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Data Penjual</span>
+                  </a>
+                </li>
+                <!-- menu penjual -->
+              <?php
+              } elseif ($_SESSION['level'] == "penjual") {
+              ?>
+                <li class="sidebar-item">
+                  <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Kelola Produk</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Laporan Penjualan</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Cek Pembayaran</span>
+                  </a>
+                </li>
+                <!-- menu pembeli -->
+              <?php
+              } elseif ($_SESSION['level'] == "pembeli") {
+              ?>
+                <li class="sidebar-item">
+                  <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Keranjang</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Riwayat Belanja</span>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Testimoni</span>
+                  </a>
+                </li>
+              <?php
+              }
+              ?>
+
             </ul>
           </div>
         </div>

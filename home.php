@@ -13,10 +13,10 @@
         <div class="card">
           <div class="card-body">
             <?php
-						$sql = mysqli_query($koneksi, "select * from user where
+            $sql = mysqli_query($koneksi, "select * from user where
                         email='$_SESSION[email]'");
-						$dt = mysqli_fetch_assoc($sql);
-						?>
+            $dt = mysqli_fetch_assoc($sql);
+            ?>
             <div class="d-flex justify-content-center align-items-center flex-column">
               <div class="avatar avatar-2xl">
                 <img src="./img/foto_user/<?php echo $dt['foto']; ?>" class="img-thumbnail" alt="...">
@@ -53,7 +53,7 @@
                     <th>Jenis Kelamin</th>
                     <th>:</th>
                     <th><?php $jk = ($dt['jk'] == "L") ? "Laki-Laki" : "Perempuan";
-												echo $jk; ?></th>
+                        echo $jk; ?></th>
                   </tr>
                   <tr>
                     <th>Telepon</th>
@@ -62,9 +62,9 @@
                   </tr>
                 </thead>
               </table><br>
-              <a href="?page=updateprofil&&email=<?php echo $dt['email']; ?>">
+              <a href="?page=updateprofile&&email=<?php echo $dt['email']; ?>">
                 <button class="btn btn-primary">
-                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-edit"></i>
                   <span>Update Profile</span>
                 </button>
               </a>
